@@ -1,327 +1,120 @@
-# Contributor's Guide
+<table>
+    <tr>
+        <!-- Do not translate this table -->
+        <td> Read these guidelines in </td>
+        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
+        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> Русский </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
+    </tr>
+</table>
 
-## Table of Contents
+# Contribution Guidelines
 
--   [I want to help!](#i-want-to-help)
--   [Contribution Guidelines](#contribution-guidelines)
--   [Prerequisites](#prerequisites)
--   [Getting Started](#getting-started)
--   [Linting Setup](#linting-setup)
--   [Found a bug?](#found-a-bug)
--   [Creating Pull Requests](#creating-pull-requests)
--   [Common Steps](#common-steps)
--   [Next Steps](#next-steps)
+Hello 👋!
 
-### I want to help!
+freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
 
-We welcome pull requests from Free Code Camp campers (our students) and seasoned
-JavaScript developers alike! Follow these steps to contribute:
+We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
 
-1.  Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/FreeCodeCamp/FreeCodeCamp/labels/help%20wanted) tag.
+Happy contributing 🎉!
 
-2.  Let us know you are working on it by posting a comment on the issue.
+## Here are some fun ways that you can help
 
-3.  Feel free to ask for help in our [Help
-    Contributors](https://gitter.im/FreeCodeCamp/HelpContributors) Gitter room.
+You can choose to contribute to any area that interests you:
 
-If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
+1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help to edit [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
 
-### Contribution Guidelines
+2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
-1.  Fork the project: [How To Fork And Maintain a Local Instance of Free Code
-    Camp](http://forum.freecodecamp.com/t/how-to-fork-and-maintain-a-local-instance-of-free-code-camp/19116)
+3. Help us add subtitles or closed captions to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
-2.  Create a branch specific to the issue or feature you are working on. Push
-    your work to that branch. ([Need help with
-    branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
+## Contribute to this open source codebase
 
-3.  Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a
-    short description of the changes or feature you are attempting to add. For
-    example `fix/email-login` would be a branch where I fix something specific
-    to email login.
+We have a huge open source codebase consisting of thousands of [coding challenges](https://learn.freecodecamp.org) and [guide articles](https://guide.freecodecamp.org).
 
-4.  [Set up Linting](#linting-setup) to run as you make changes.
+You can help us to:
 
-5.  When you are ready to share your code, run the test suite `npm test` and
-    ensure all tests pass.  For Windows contributors, skip the jsonlint pretest
-    run by using `npm run test-challenges`, as jsonlint will always fail on
-    Windows, given the wildcard parameters.
+- [💻 Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-6.  Squash your Commits. Ref: [rebasing](http://forum.freecodecamp.com/t/how-to-use-git-rebase/13226)
+- [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
-7.  Submit a [pull
-    request](http://forum.freecodecamp.com/t/how-to-make-a-pull-request-on-free-code-camp/19114)
-    from your branch to Free Code Camp's `staging` branch.  [Travis
-    CI](https://travis-ci.org/FreeCodeCamp/FreeCodeCamp) will then take your
-    code and run `npm test`.  Make sure this passes, then we'll do a quick code
-    review and give you feedback, then iterate from there.
+### Create, Update and Fix Bugs in our coding challenges
 
-### Prerequisites
+All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
-| Prerequisite                                | Version |
-| ------------------------------------------- | ------- |
-| [MongoDB](http://www.mongodb.org/downloads) | `~ ^3`  |
-| [Node.js](http://nodejs.org)                | `~ ^4`  |
-| npm (comes with Node)                       | `~ ^2`  |
+You can help expand them and make their wording clearer. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
 
-> _Updating to the latest releases is recommended_.
+If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
-### Getting Started
+### Help us fix bugs in freeCodeCamp.org's learning platform
 
-Note: If this is your first time working with a node-gyp dependent module,
-please follow the [node-gyp installation
-guide](https://github.com/nodejs/node-gyp#installation) to ensure a working npm
-build.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-The easiest way to get started is to clone the repository:
+Broadly,
 
-```bash
-# Get the latest snapshot
-git clone --depth=1 https://github.com/freecodecamp/freecodecamp.git freecodecamp
+- We have a Node.js based API server.
+- A set of React based client applications.
+- A script that we use to evaluate our front-end projects.
 
-# Change directory
-cd freecodecamp
+Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot of curiosity.
 
-# Install NPM dependencies
-npm install
+Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them in order to contribute.
 
-# Install Gulp globally
-npm install -g gulp
+**If you want to help us improve our codebase, you can either [set up freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md) or use Gitpod, a free online dev environment.**
 
-# Install Bower globally
-npm install -g bower
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-# Install Bower dependencies
-bower install
-```
+(Starts a ready-to-code dev environment for freecodecamp in your browser.)
 
-_Private Environment Variables (API Keys)_
+Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach out to our platform dev team to help you with this:
 
-```bash
-# Create a copy of the "sample.env" and name it as ".env".
-# Populate it with the necessary API keys and secrets:
-cp sample.env .env
-```
+| Name            | GitHub | Twitter |
+|:----------------|:-------|:--------|
+| Mrugesh Mohapatra | [`@raisedadead`](https://github.com/raisedadead) | [`@raisedadead`](https://twitter.com/raisedadead)|
+| Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
+| Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
 
-Edit your `.env` file and modify the API keys only for services that you will
-use.
+> **Email: `dev@freecodecamp.org`**
 
-Note : Not all keys are required, to run the app locally, however `MONGOHQ_URL`
-is the most important one. Unless you have MongoDB running in a setup different
-than the defaults, the URL in the `sample.env` should work fine.
+## Frequently Asked Questions
 
-You can leave the other keys as they are. Keep in mind if you want to use more
-services you'll have to get your own API keys for those services and edit those
-entries accordingly in the `.env` file.
+**How can I report a bug that is not on board?**
 
-```bash
-# Start the mongo server in a separate terminal
-mongod
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-# Initialize Free Code Camp
-# This will seed the database for the first time.
-# This command should only be run once.
-npm run only-once
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-# start the application
-gulp
-```
+Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://www.freecodecamp.org/forum) before making a report.
 
-Now navigate to your browser and open
-<http://localhost:3001>. If the app loads,
-congratulations – you're all set. Otherwise, let us know by opening a GitHub
-issue and with your error.
+**How can I report a security issue?**
 
-### Linting Setup
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-You should have [ESLint running in your
-editor](http://eslint.org/docs/user-guide/integrations.html), and it will
-highlight anything doesn't conform to [Free Code Camp's JavaScript Style
-Guide](http://forum.freecodecamp.com/t/free-code-camp-javascript-style-guide/19121)
-(you can find a summary of those rules
-[here](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/.eslintrc).
-Please do not ignore any linting errors, as they are meant to **help** you and
-to ensure a clean and simple code base. Make sure none of your JavaScript is
-longer than 80 characters per line.  The reason we enforce this is because one
-of our dependent NPM modules, [jsonlint](https://github.com/zaach/jsonlint),
-does not fully support wildcard paths in Windows.
+**I am stuck on something that is not included in this documentation. How can I get help?**
 
-### Found a bug?
+Feel free to ask for help in:
 
-Do not file an issue until you have followed these steps:
+- [The "Contributors" category of our public forum](https://www.freecodecamp.org/forum/c/contributors)
+- [Our public contributors chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
-1.  Read [Help I've Found a
-    Bug](http://forum.freecodecamp.com/t/how-to-report-a-bug/19543)
-    wiki page and follow the instructions there.
+We are excited to help you contribute to any of the topics that you would like to work on. Make sure you search for your query before posting a new one. Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
 
-2.  Asked for confirmation in the appropriate [Help Room](http://forum.freecodecamp.com/t/free-code-camp-official-chat-rooms/19390/2)
+**I am new to GitHub and Open Source in general:**
 
-3.  Please _do not_ open an issue without a 3rd party confirmation of your
-    problem.
+Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
-### Creating Pull Requests
+**What do these different labels that are tagged on issues mean?**
 
-#### What is a Pull Request?
+Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-A pull request (PR) is a method of submitting proposed changes to the Free Code
-Camp Repo (or any Repo, for that matter). You will make changes to copies of the
-files which make up Free Code Camp in a personal fork, then apply to have them
-accepted by Free Code Camp proper.
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first-timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on. These are up for grabs, and you do not need to seek permission before working on them.
 
-#### Need Help?
+If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
-Free Code Camp Issue Mods and staff are on hand to assist with Pull Request
-related issues on our Help Contributors Chat Room
+**I found a typo, should I report an issue before I can make a pull request?**
 
-#### How to find the code in the Free Code Camp codebase to fix/edit?
-
-The best way to find out any code you wish to change/add or remove is using
-the GitHub search bar at the top of the repository page. For example, you could 
-search for a challenge name and the results will display all the files along 
-with line numbers. Then you can proceed to the files and verify this is the area
-that you were looking forward to edit. Always feel free to reach out to the chat
-room when you are not certain of any thing specific in the code.
-
-#### Important: ALWAYS EDIT ON A BRANCH
-
-Take away only one thing from this document, it should be this: Never, **EVER**
-make edits to the `staging` branch. ALWAYS make a new branch BEFORE you edit
-files. This is critical, because if your PR is not accepted, your copy of
-staging will be forever sullied and the only way to fix it is to delete your
-fork and re-fork.
-
-#### Methods
-
-There are two methods of creating a pull request for Free Code Camp:
-
--   Editing files via the GitHub Interface
--   Editing files on a local clone
-
-##### Method 1: Editing via your Local Fork _(Recommended)_
-
-This is the recommended method. Read about How to Setup and Maintain a Local
-Instance of Free Code Camp.
-
-1.  Perform the maintenance step of rebasing `staging`.
-2.  Ensure you are on the `staging` branch using `git status`:
-
-```bash
-$ git status
-On branch staging
-Your branch is up-to-date with 'origin/staging'.
-
-nothing to commit, working directory clean
-```
-
-1.  If you are not on staging or your working directory is not clean, resolve
-    any outstanding files/commits and checkout staging `git checkout staging`
-
-2.  Create a branch off of `staging` with git: `git checkout -B
-    branch/name-here` **Note:** Branch naming is important. Use a name like
-    `fix/short-fix-description` or `feature/short-feature-description`. Review
-     the [Contribution Guidelines](#contribution-guidelines) for more detail.
-
-3.  Edit your file(s) locally with the editor of your choice
-
-4.  Check your `git status` to see unstaged files.
-
-5.  Add your edited files: `git add path/to/filename.ext` You can also do: `git
-    add .` to add all unstaged files. Take care, though, because you can
-    accidentally add files you don't want added. Review your `git status` first.
-
-6.  Commit your edits: `git commit -m "Brief Description of Commit"`
-
-7.  Squash your commits, if there are more than one.
-
-8.  Push your commits to your GitHub Fork: `git push -u origin branch/name-here`
-
-9.  Go to [Common Steps](#common-steps)
-
-##### Method 2: Editing via the GitHub Interface
-
-Note: Editing via the GitHub Interface is not recommended, since it is not
-possible to update your fork via GitHub's interface without deleting and
-recreating your fork.
-
-Read the [Wiki
-article](http://forum.freecodecamp.com/t/how-to-make-a-pull-request-on-free-code-camp/19114)
-for further information
-
-### Common Steps
-
-1.  Once the edits have been committed, you will be prompted to create a pull
-    request on your fork's GitHub Page.
-
-2.  By default, all pull requests should be against the FCC main repo, `staging`
-    branch.
-
-3.  Submit a [pull
-    request](http://forum.freecodecamp.com/t/how-to-contribute-via-a-pull-request/19368)
-    from your branch to Free Code Camp's `staging` branch.
-
-4.  The title (also called the subject) of your PR should be descriptive of your
-    changes and succinctly indicates what is being fixed.
-
-    -   **Do not add the issue number in the PR title**.
-
-    -   Examples: `Add Test Cases to Bonfire Drop It` `Correct typo in Waypoint
-        Size Your Images`
-
-5.  In the body of your PR include a more detailed summary of the changes you
-    made and why.
-
-    -   If the PR is meant to fix an existing bug/issue, then, at the end of
-        your PR's description, append the keyword `closes` and #xxxx (where xxxx
-        is the issue number). Example: `closes #1337`. This tells GitHub to
-        close the existing issue, if the PR is merged.
-
-6.  Indicate if you have tested on a local copy of the site or not.
-
-### Next Steps
-
-#### If your PR is accepted
-
-Once your PR is accepted, you may delete the branch you created to submit it.
-This keeps your working fork clean.
-
-You can do this with a press of a button on the GitHub PR interface. You can
-delete the local copy of the branch with: `git branch -D branch/to-delete-name`
-
-#### If your PR is rejected
-
-Don't despair! You should receive solid feedback from the Issue Moderators as to
-why it was rejected and what changes are needed.
-
-Many Pull Requests, especially first Pull Requests, require correction or
-updating. If you have used the GitHub interface to create your PR, you will need
-to close your PR, create a new branch, and re-submit.
-
-If you have a local copy of the repo, you can make the requested changes and
-amend your commit with: `git commit --amend` This will update your existing
-commit. When you push it to your fork you will need to do a force push to
-overwrite your old commit: `git push --force`
-
-Be sure to post in the PR conversation that you have made the requested changes.
-
-### Other resources
-
--   [Searching for Your Issue on
-    GitHub](http://forum.freecodecamp.com/t/searching-for-existing-issues/19139)
-
--   [Creating a New GitHub
-    Issue](http://forum.freecodecamp.com/t/creating-a-new-github-issue/18392)
-
--   [Select Issues for Contributing Using
-    Labels](http://forum.freecodecamp.com/t/free-code-camp-issue-labels/19556)
-
--   [How to clone the FreeCodeCamp website on a Windows
-    pc](http://forum.freecodecamp.com/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
-
--   [How to log in to your local FCC site - using
-    GitHub](http://forum.freecodecamp.com/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
-
--   [Writing great git commit
-    message](http://forum.freecodecamp.com/t/writing-good-git-commit-messages/13210)
-
--   [Contributor Chat Support - For the FCC Repositories, and running a local
-    instance](https://gitter.im/FreeCodeCamp/HelpContributors)
+For typos and other wording changes, you can directly open pull requests without first creating an issue. Issues are more for discussing larger problems associated with code or structural aspects of the curriculum.
